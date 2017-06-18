@@ -1,2 +1,3 @@
-# DjangoBlog
-A blog app written in Python using the Django web framework
+# Blogging platform in Python using Django
+###A blog app written in Python using the Django web framework
+
