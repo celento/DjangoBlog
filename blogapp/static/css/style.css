@@ -1,0 +1,40 @@
+body
+{
+ background-color: #eee;
+}
+.row 
+{
+  margin:0 !important;
+}
+.c_head
+{
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+.t_t
+{
+  margin-left: 40px;
+}
+.c_box
+{
+  border: 1px solid #eee;
+  margin: 10px;
+  background-color: #fff;
+  box-shadow: 10px 10px 10px #eee;
+}
+.c_box2
+{
+  border: 1px solid #eee;
+  margin-top:10px;
+  background-color: #fff;
+  box-shadow: 10px 10px 10px #eee;
+}
+.c_box3
+{
+  border: 1px solid #eee;
+     margin-left: 40px !important;
+    margin-right: 40px !important;
+    padding: 13px;
+  background-color: #fff;
+  box-shadow: 10px 10px 10px #eee
+}

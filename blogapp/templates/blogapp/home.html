@@ -1,0 +1,22 @@
+{% extends "blogapp/container.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-8 ">
+       {% for p in object_list %}
+       <div class="c_box">
+        <h3 class="t_t" ><a href="/{{ p.id }}/"> {{ p.title }}</a></h3>
+        <h5 class="t_t"><strong>{{ p.date|date:"Y-m-d" }} | {{ p.author }}</strong></h5>
+        <p class="t_t"> {{ p.body|slice:":100"}}....</p>
+       </div>
+        {% endfor %}
+  </div>
+  
+  <div class="col-xs-6 col-md-4 c_box2">
+       <h3> Recent Posts </h3>
+        {% for p in object_list %}
+            <h5><strong>{{ p.date|date:"Y-m-d" }}</strong></h5>  
+            <h5><a href="/{{ p.id }}/"> {{ p.title }}</a></h5>
+        {% endfor %}
+  </div>
+</div>
+{% endblock %}

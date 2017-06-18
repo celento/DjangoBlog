@@ -1,0 +1,12 @@
+{% extends "blogapp/container.html" %}
+{% block content %}
+<div class="row c_box3 t_t">
+  
+     <h2>{{ post.title }} </h2>
+     <h5><strong>Author : {{ post.author }}</strong></h5>
+     <h5>{{ post.date }}</h5>
+     <br>
+     <p>{{ post.body|safe|linebreaks }}
+  
+</div>
+{% endblock %}
