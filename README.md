@@ -25,7 +25,7 @@ For more, see the [official Django documentaion](https://docs.djangoproject.com/
 
 Includes a copy of Bootstrap v3.3.7. Uses SQLITE database.
 
-###### If you are planning to run the entire project, the login credentials for the admin panel is as follows:
+###### If you are planning to run the entire project the login credentials for the admin panel is as follows:
 `>username : admin`
 `>password : password! (password followed by an exclamation mark !)`
 
