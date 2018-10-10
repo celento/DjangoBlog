@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python /Hacktoberfest
 import os
 import sys
 
