@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,12 +16,13 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-
+    {% block component_css %} {% endblock component_css %}
+    <link rel="stylesheet" href='{% static "/style/base.css" %}' />
     {% block title %} {% endblock title %}
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Awesome Blog</a>
+    <nav       class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+      <a class="navbar-brand" href="/blogapp/">Awesome Blog</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -34,14 +36,11 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav mx-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index.html"
-              >Home <span class="sr-only">(current)</span></a
+            <a class="nav-link" href="/blogapp/">
+              Home <span class="sr-only">(current)</span></a
             >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">All Blogs</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">

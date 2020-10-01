@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% load static %} {% block component_css %}
+<link rel="stylesheet" href="{% static './style/details.css' %}" />
+{% endblock component_css %} {% block body %}
+<div
+  class="container-fluid d-flex align-items-center justify-content-center post_container"
+>
+  <div class="post-content w-75">
+    <div class="jumbotron">
+      <h1 class="display-4">{{post.title}}</h1>
+      <p class="lead">{{post.author}}</p>
+      <hr class="my-4" />
+      <p>{{post.body}}</p>
+      <a class="btn btn-primary btn-lg" href="/blogapp/" role="button"
+        >Go Home</a
+      >
+    </div>
+  </div>
+</div>
+
+{% endblock body %}

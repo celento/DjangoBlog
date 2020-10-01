@@ -1,0 +1,5 @@
+.card-title a {
+  text-decoration: none !important;
+  cursor: pointer;
+  color: #ffffff !important;
+}
