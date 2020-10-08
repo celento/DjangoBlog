@@ -1,0 +1,72 @@
+{% extends 'base.html' %} {% load static %} {% block component_css %}
+<link rel="stylesheet" href="{% static './style/index.css' %}" />
+{% endblock component_css %} {% block body %}
+<section class="d-flex align-items-center w-100 justify-content-center">
+  <div class="container-fluid w-100">
+    <div class="row w-100">
+      <div class="col-md-8 col-sm-12 col-lg-8">
+        <div class="container mx-auto mt-5">
+          {% for p in page_obj %}
+          <div class="card text-white bg-primary mb-3" style="max-width: 75">
+            <div class="card-header text-right">
+              Published on <strong>{{p.date}}</strong> By Author - {{p.author}}
+            </div>
+            <div class="card-body">
+              <h5 class="card-title text-center">
+                <a href="/blogapp/{{ p.id }}/" style="font-size: 30px">
+                  <i class="fa fa-underline" aria-hidden="true"
+                    >{{ p.title }}</i
+                  ></a
+                >
+              </h5>
+              <p class="card-text px-5">{{ p.body }}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <nav aria-label="..." class="m-5">
+          <ul class="pagination mx-auto">
+            {% if page_obj.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+            <li class="page-item">
+              <a
+                class="page-link"
+                href="?page={{ page_obj.previous_page_number }}"
+                >Previous</a
+              >
+            </li>
+            {% endif %}
+            <li class="page-item active" aria-current="page">
+              <a class="page-link" href="#"
+                >{{ page_obj.number }} <span class="sr-only">(current)</span></a
+              >
+            </li>
+            {% if page_obj.has_next %}
+            <li class="page-item">
+              <a class="page-link" href="?page={{ page_obj.next_page_number }}"
+                >Next</a
+              >
+            </li>
+            <li class="page-item">
+              <a
+                class="page-link"
+                href="?page={{ page_obj.paginator.num_pages }}"
+                >Last</a
+              >
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+      <div class="col-sm-12 col-lg-4 col-md-4">
+        <h3>Recent Posts</h3>
+        {% for p in latest_post_list %}
+        <h5><strong>{{ p.date|date:"Y-m-d" }}</strong></h5>
+        <h5><a href="/blogapp/{{ p.id }}/"> {{ p.title }}</a></h5>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock body %}
